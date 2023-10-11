@@ -1,0 +1,114 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>
+        Login
+    </title>
+    <STYLE>
+        #body{
+            background-color: #202020;
+            color: orange;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #menu{
+            margin-left: 27%;
+            padding: 20px;
+            font-size: larger;
+        }
+        #signup{
+            background-color: #202020;
+            border: 2px solid #404040;
+            margin-top: 0px;
+            float: left;
+            padding: 20px;
+            border-radius: 25px;
+            width: 360px;
+        }
+        input[type="submit"]{
+            margin-top: 5px;
+            margin-left: 42%;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        input{
+            background-color:#404040;
+            color:white;
+        }
+        input[type="radio"]{
+            accent-color:green;
+        }
+        label {
+        display: inline-block;
+        width: 150px;
+        }
+        #login{
+            background-color: #202020;
+            margin-top: 10px;
+            float: left;
+            padding: 20px;
+            border-radius: 25px;
+            border: 2px solid #404040;
+        }
+        .a{
+            margin-left: 30px;
+            display: inline-block;
+        }
+        .header{
+            margin-left: 40%;
+            font-size: 50px;
+            color: orange;
+
+        }
+        .menuWriting{
+            text-align: center;
+            color:green;
+        }
+
+    </STYLE>
+</head>
+
+<body id = "body">
+    <DIV id = "content">
+       <b height = "120" class="header">Java Jungle</b>
+    <DIV ID = "menu">
+        <DIV ID = "login">
+            <p class="menuWriting">Login:</p>
+            <form method="post" action="login">
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email"><br>
+                <label for="pword">Password: </label>
+                <input type="password" name="pword" id="pword"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </DIV>
+        <DIV ID = "signup">
+            <form method="post" action="signup">
+                <p class="menuWriting">Sign-up: </p>
+                <label for="fname">Firstname: </label>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Lastname: </label>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="email">E-mail: </label>
+                <input type="email" id="email" name="email"><br>
+                <label for="pword">Password: </label>
+                <input type="password" id="pword" name="pword" class="invalid"><br>
+                <input type="radio" name="button_clicked" value="student" class="a" checked>Student</button>
+                <p class="a">OR</p>
+                <input type="radio" name="button_clicked" value="teacher" class="a">Teacher</button><br>
+                <input type="submit" value="Submit">
+            </form>
+        </DIV>
+    </DIV>
+        <canvas id="myCanvas" width="700" height="650"></canvas>
+    </DIV>
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

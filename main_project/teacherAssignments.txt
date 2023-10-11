@@ -1,0 +1,214 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>
+        Assignments
+    </title>
+    <STYLE>
+        #body{
+                    background-color: #202020;
+                    color: orange;
+                    font-family: 'JetBrains Mono', monospace;
+        }
+        #Home{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+        #return{
+                    margin-top: 10px;
+                    margin-left: 10px;
+                    font-family: 'JetBrains Mono', monospace;
+                    font-size: 50px;
+                    color: white;
+                    float: left;
+                    border: none;
+                    cursor: pointer;
+                    background-color:inherit;
+        }
+        .header{
+                            height: 75px;
+                            position: relative;
+                            background-color: #202020;
+                            border: 2px solid #404040;
+                            border-radius: 25px;
+        }
+        .userinfo{
+                            float: right;
+                            margin-right: 10px;
+                            margin-top: 0px;
+        }
+        .logo{
+            margin: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 50px;
+            color: orange;
+            float: left;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .title{
+            margin: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 25px;
+            color:firebrick;
+        }
+        .writing{
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            color:green;
+            margin-top: 0px;
+        }
+        .assignment{
+                            margin: 0 auto;
+                            margin-bottom: 10px;
+                            width: 500px;
+                            background-color: #202020;
+                            border: 2px solid #404040;
+                            border-radius: 25px;
+        }
+        .align{
+            margin-left: 20px;
+            margin-top: 5px;
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        input{
+                            background-color:#404040;
+                            color:white;
+                            font-family: 'JetBrains Mono', monospace;
+        }
+        button{
+            font-family: 'JetBrains Mono', monospace;
+            background-color:#404040;
+            color:white;
+        }
+    </STYLE>
+</head>
+
+<body id = "body">
+    <DIV id = "content">
+        <DIV class="header">
+            <form method="post" action="login">
+                 <button type="submit" class="logo">JavaJungle</button>
+            </form>
+            <p class="userinfo">qa</p>
+        </DIV>
+    <DIV ID = "Home">
+        <p>Assignments:</p>
+        *a*
+        <br>
+        <button onClick="showForm()">Create an Assignment</button>
+        <br>
+        <form method="post" action="assignments" id = "form">
+            <label for="name">Choose name of assignment: </label>
+            <br>
+            <input type="text" name="title" id="problems" >
+            <p name="class2">Choose classes:</p>
+            *c*
+            <button name="class2" id="btn" type="button" onClick="showProblems()">Confirm</button>
+            <br>
+            <p name="problem2">Choose problems:</p>
+            *p*
+            <button name="problem2" id="pbut" type="button" onClick="showdeadline()">Confirm</button>
+            <input type="hidden" name="problems">
+            <br>
+            <label for="deadline" name="deadline" >Choose deadline: </label>
+            <input name="date" type="date" id="date">
+              <br><br>
+              <input name="deadline" id="sub" type="submit" onClick="submitForm()" value="Save">
+        </form>
+        <form method="post" action="login">
+            <input type="submit" id="return" class="logo" value="<RETURN TO HOME"/>
+        </form>
+        <iframe style="position: absolute;width:0;height:0;border:0;" src="" name="names"></iframe>
+    </DIV>
+    </DIV>
+
+    <script>
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById("date").setAttribute('min', today);
+        document.getElementById("form").style.display="none";
+        function submitForm(){
+            var markedCheckbox = document.getElementsByName('class');
+            var names='';
+              for (var checkbox of markedCheckbox) {
+                if (checkbox.checked){
+                    console.log(checkbox.value);
+                  names = names + checkbox.value + '~';
+                  }
+            }
+            var markedCheckbox2 = document.getElementsByName('problem');
+            var problems='';
+            for (var checkbox2 of markedCheckbox2) {
+                if (checkbox2.checked){
+                    problems = problems + checkbox2.value + '~';
+                }
+            }
+            document.getElementById("sub");
+            document.getElementById("sub").value=names;
+            document.getElementsByName("problems")[0].value=problems;
+            document.getElementById("form").submit();
+        }
+        function showForm(){
+            document.getElementById("form").style.display="inline";
+        }
+        var problems = document.getElementsByName("problem");
+        for (let z = 0; z < problems.length; z++) {
+          problems[z].style.display="none";
+        }
+        var problems2 = document.getElementsByName("problem2");
+        for (let c = 0; c < problems2.length; c++) {
+          problems2[c].style.display="none";
+        }
+        var deadline = document.getElementsByName("deadline");
+        var date = document.getElementById("date");
+            for (let x = 0; x < deadline.length; x++) {
+                  deadline[x].style.display="none";
+        }
+        date.style.display="none";
+        function showdeadline(){
+            for (let d = 0; d < deadline.length; d++) {
+                  deadline[d].style.display="inline";
+            }
+            date.style.display="inline";
+            document.getElementById("pbut").disabled=true;
+            for (let z = 0; z < problems.length; z++) {
+                  problems[z].disabled=true;
+            }
+        }
+        var classes = document.getElementsByName("class");
+        function showProblems(){
+            document.getElementById("btn").disabled = true;
+            for (let y = 0; y < problems.length; y++) {
+                problems[y].style.display="inline";
+            }
+            for (let d = 0; d < problems2.length; d++) {
+                problems2[d].style.display="inline";
+            }
+            for (let i = 0; i < classes.length; i++) {
+                classes[i].disabled = true;
+            }
+        }
+        function showScores(clicked){
+            var scores = document.getElementsByName(clicked);
+            for (let i = 0; i<scores.length;i++){
+                if (scores[i].style.display=="block"){
+                    scores[i].style.display="none";
+                    document.getElementById(clicked).innerHTML = 'View Scores';
+                }
+                else{
+                    scores[i].style.display="block";
+                    document.getElementById(clicked).innerHTML = 'Hide Scores';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

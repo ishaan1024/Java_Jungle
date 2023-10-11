@@ -1,0 +1,159 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>
+        problem_title
+    </title>
+    <STYLE>
+        #body{
+            background-color: #202020;
+            color: orange;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #menu{
+            margin-left: 25%;
+            padding: 20px;
+            font-size: larger;
+        }
+        .header{
+            height: 75px;
+            position: relative;
+            background-color: #202020;
+            border: 2px solid #404040;
+            border-radius: 25px;
+        }
+        #divdata{
+            margin-bottom:0px;
+        }
+        .userinfo{
+            float: right;
+            margin-right: 10px;
+            margin-top: 0px;
+        }
+        #signin{
+            margin-top: 0px;
+            float: left;
+            padding: 20px;
+        }
+        #editor {
+            font-family: 'JetBrains Mono', monospace;
+            float: left;
+            position: relative;
+            height: 500px;
+            width: 50%;
+        }
+        input[type="submit"]{
+            margin-left: 300px;
+        }
+        #iframe{
+            width: 49%;
+            height: 400px;
+            font-family: 'JetBrains Mono', monospace;
+            background-color: white;
+            border: 5px solid #404040;
+            border-radius: 25px;
+        }
+        .runbut{
+            background-color: black;
+            color: green;
+            font-family: 'JetBrains Mono', monospace;
+            float: left;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 6px 25px;
+            margin-top: 4px;
+            margin-left: 10px;
+            border-radius: 5px;
+            word-spacing: 10px;
+        }
+        .logo{
+            margin: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 50px;
+            color: orange;
+            float: left;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .problem{
+            margin: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 30px;
+            color:firebrick;
+        }
+        .pwriting{
+            margin: 20px;
+        }
+        .title{
+            margin: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 40px;
+            color:firebrick;
+        }
+        textarea {
+            resize: none;
+        }
+    </STYLE>
+</head>
+
+<body id = "body">
+    <DIV id = "content">
+        <DIV class="header">
+            <form method="post" action="login">
+                <button type="submit" class="logo">JavaJungle</button>
+            </form>
+            <p class="userinfo">qa</p>
+        </DIV>
+    <DIV ID = "Home">
+        <p id="title" class="title">problem_title</p>
+        <p class="problem">Description:</p>
+        <p class="pwriting">description</p>
+        <p class="problem">Expected Output:</p>
+        <p class="pwriting">expected_output</p>
+        <form method="post" action="handler" target="output" id="divdata">
+            <div id="editor"></div>
+            <textarea name="code" id="code" hidden></textarea>
+            <iframe id="iframe" src="" name="output"></iframe>
+            <input class = "runbut" type="button" onclick="submitForm()" value="RUN >"/>
+        </form>
+        <form method="post" action="results" id="submit">
+            <textarea name="final" id="final" hidden></textarea>
+            <textarea name="header" id="getHeader" hidden></textarea>
+            <input class="runbut" type="submit" onclick="getCode()" value="SUBMIT"/>
+        </form>
+    </DIV>
+    </DIV>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.5/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        var editor = ace.edit("editor");
+        editor.setValue(
+`
+public class Main {\n
+    public static void main(String args[]) {\n
+        System.out.println("hi");\n
+    }\n
+}
+`);
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/java");
+        function submitForm() {
+            var editor = ace.edit("editor");
+            var code = editor.getSession().getValue();
+            document.getElementById("code").value=code;
+            document.getElementById("divdata").submit();
+        }
+        function getCode(){
+            var code = editor.getSession().getValue();
+            document.getElementById("final").value=code;
+            var header = document.getElementById("title").innerHTML;
+            document.getElementById("getHeader").value=header;
+            document.getElementById("submit").submit();
+        }
+    </script>
+</body>
+
+</html>

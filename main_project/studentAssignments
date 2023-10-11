@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <title>
+        Assignments
+    </title>
+    <STYLE>
+        #body{
+            background-color: #202020;
+            color: orange;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #Home{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+        .header{
+                    height: 75px;
+                    position: relative;
+                    background-color: #202020;
+                    border: 2px solid #404040;
+                    border-radius: 25px;
+                }
+        .userinfo{
+                    float: right;
+                    margin-right: 10px;
+                    margin-top: 0px;
+                }
+        .logo{
+            margin: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 50px;
+            color: orange;
+            float: left;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .title{
+            margin: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 20px;
+            color:firebrick;
+        }
+        .button{
+            font-family: 'JetBrains Mono', monospace;
+                        background-color:#404040;
+                        color:white;
+        }
+        .menuWriting{
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            color:green;
+        }
+        .problem{
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    height: 85px;
+                    width: 500px;
+                    background-color: #202020;
+                    border: 2px solid #404040;
+                    border-radius: 25px;
+                }
+        .align{
+            margin-left: 20px;
+            margin-top: 0px;
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .assignment{
+            border: 2px solid #404040;
+            border-radius: 25px;
+            width: 1000px;
+            margin: auto;
+        }
+    </STYLE>
+</head>
+
+<body id = "body">
+    <DIV id = "content">
+        <DIV class="header">
+            <form method="post" action="login">
+                 <button type="submit" class="logo">JavaJungle</button>
+            </form>
+            <p class="userinfo">qa</p>
+        </DIV>
+    <DIV ID = "Home">
+        <p>Assignments:</p>
+            *a*
+        <br>
+    </DIV>
+    </DIV>
+
+    <script>
+        function showQuestions(clicked){
+            var questions = document.getElementsByName(clicked);
+            for (let i = 0; i<questions.length;i++){
+                if (questions[i].style.display=="block"){
+                    questions[i].style.display="none";
+                    document.getElementById(clicked).innerHTML = 'View Questions';
+                }
+                else{
+                    questions[i].style.display="block";
+                    document.getElementById(clicked).innerHTML = 'Hide Questions';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>
+        Classes
+    </title>
+    <STYLE>
+        #body{
+            background-color: #202020;
+            color: orange;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #Home{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+        #return{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 50px;
+            color: white;
+            float: left;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .header{
+                    height: 75px;
+                    position: relative;
+                    background-color: #202020;
+                    border: 2px solid #404040;
+                    border-radius: 25px;
+        }
+        .userinfo{
+                    float: right;
+                    margin-right: 10px;
+                    margin-top: 0px;
+        }
+        .logo{
+                    margin: 5px;
+                    font-family: 'JetBrains Mono', monospace;
+                    font-size: 50px;
+                    color: orange;
+                    float: left;
+                    border: none;
+                    cursor: pointer;
+                    background-color:inherit;
+                }
+        .title{
+            margin: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 40px;
+            color:firebrick;
+        }
+        input{
+                    background-color:#404040;
+                    color:white;
+                    font-family: 'JetBrains Mono', monospace;
+        }
+        #sub{
+                    margin-top: 5px;
+                    background-color:#404040;
+                    color:white;
+                    font-family: 'JetBrains Mono', monospace;
+        }
+        .menuWriting{
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            color:green;
+        }
+        .problem{
+            margin-left: 10px;
+            margin-bottom: 10px;
+            height: 80px;
+            width: 1200px;
+            background-color: gray;
+        }
+        .align{
+            margin-left: 20px;
+            margin-top: 5px;
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+    </STYLE>
+</head>
+
+<body id = "body">
+    <DIV id = "content">
+        <DIV class="header">
+            <form method="post" action="login">
+                 <button type="submit" class="logo">JavaJungle</button>
+            </form>
+            <p class="userinfo">qa</p>
+        </DIV>
+    <DIV ID = "Home">
+        <form method="post" action="createclass" target="names" id = "class">
+            <label for="cname">Class Name: </label>
+            <input type="text" name="cname">
+            <p>Choose Students:</p>
+            *s*
+            <button id="sub" name="newClass" type="submit" onClick="submitForm()" value="">Create</button>
+        </form>
+        <form method="post" action="login">
+            <input type="submit" id="return" class="logo" value="<RETURN TO HOME"/>
+        </form>
+        <iframe style="position: absolute;width:0;height:0;border:0;" src="" name="names"></iframe>
+    </DIV>
+    </DIV>
+
+    <script>
+        function submitForm(){
+            var markedCheckbox = document.getElementsByName('student');
+            var names='';
+              for (var checkbox of markedCheckbox) {
+                if (checkbox.checked)
+                  names = names + checkbox.value + ',';
+              }
+            document.getElementById("sub").value=names;
+            button2 = document.getElementById("sub");
+            document.getElementById("class").submit();
+            button2.style.display="none";
+        }
+    </script>
+</body>
+
+</html>

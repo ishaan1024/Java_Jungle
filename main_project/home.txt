@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <title>
+        Home
+    </title>
+    <STYLE>
+        #body{
+            background-color: #202020;
+            color: orange;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #menu{
+            margin-left: 25%;
+            padding: 20px;
+            font-size: larger;
+
+        }
+        .header{
+            position: relative;
+            background-color: #202020;
+            height: 75px;
+            border: 2px solid #404040;
+            border-radius: 25px;
+        }
+        input[type="submit"]{
+            font-family: 'JetBrains Mono', monospace;
+            background-color:#404040;
+            color:white;
+        }
+        .button{
+            float: right;
+            margin-right: 60px;
+            font-family: 'JetBrains Mono', monospace;
+            background-color:#404040;
+            color:white;
+        }
+        .userinfo{
+            float: right;
+            margin-right: 10px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .assignments{
+            float: left;
+            margin-left: 60px;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 35px;
+            color: green;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .classes{
+            float: right;
+            margin-right: 60px;
+            margin-top: 0px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 35px;
+            color: green;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .logo{
+            margin: 5px;
+            font-size: 50px;
+            color: orange;
+            float: left;
+        }
+        .title{
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            font-size: 40px;
+            color:firebrick;
+        }
+        .ptitle{
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            margin-right: 0px;
+            font-size: 30px;
+            color:firebrick;
+        }
+        .menuWriting{
+            text-align: center;
+            color:green;
+        }
+        .problem{
+            margin: 0 auto;
+            margin-bottom: 10px;
+            height: 85px;
+            width: 600px;
+            background-color: #202020;
+            border: 2px solid #404040;
+            border-radius: 25px;
+        }
+        .align{
+            margin-left: 50px;
+            margin-top: 0px;
+            display: inline-block;
+        }
+        .signout{
+            position: absolute;
+            bottom: 10px;
+            right: 50px;
+            margin-top: 0px;
+            margin-right: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            background-color:#404040;
+            color:white;
+        }
+
+    </STYLE>
+</head>
+
+<body id = "body">
+    <DIV id = "content">
+        <DIV class="header">
+            <p class="logo">JavaJungle</p>
+            <form method="post" action="assignments">
+                <button type="submit" class="assignments">View Assignments</button>
+            </form>
+            <p class="userinfo">qa</p>
+            <form method="post" action="signout" id="button">
+                <button type="submit" class="signout">Signout</button>
+            </form>
+            *c*
+        </DIV>
+    <DIV ID = "Home">
+        <p class="title">Problems:</p>
+        <DIV ID = "Problems">
+            *p*
+            <form method="post" action="problem" id="solvebutton">
+            </form>
+        </DIV>
+    </DIV>
+    </DIV>
+
+    <script>
+    </script>
+</body>
+
+</html>

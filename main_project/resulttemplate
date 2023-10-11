@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>
+        Results
+    </title>
+    <STYLE>
+        #body{
+            background-color: #202020;
+            color: orange;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        #header{
+            height: 75px;
+            position: relative;
+            background-color: #202020;
+            border: 2px solid #404040;
+            border-radius: 25px;
+        }
+        #marks{
+            margin: 10px;
+            margin-left: 20px;
+            font-size:50px;
+        }
+        .titles{
+            margin: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 80px;
+            color:firebrick;
+        }
+        .logo{
+            margin: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 50px;
+            color: orange;
+            float: left;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .return{
+            margin-top: 10px;
+            margin-left: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 50px;
+            color: white;
+            float: left;
+            border: none;
+            cursor: pointer;
+            background-color:inherit;
+        }
+        .rwriting{
+            margin-left:50px;
+            font-size: 30px;
+        }
+        #exout{
+            float:left;
+            margin-right: 400px;
+        }
+        #out{
+            margin-left: 50px;
+        }
+    </STYLE>
+    </head>
+
+    <body id = "body">
+        <DIV id = "content">
+            <DIV id="header">
+                <form method="post" action="login">
+                   <button type="submit" class="logo">JavaJungle</button>
+                </form>
+            </DIV>
+            <DIV id="exout">
+                <p class="titles">Expected Output:</p>
+                <p class="rwriting">expected_output</p>
+            </DIV>
+            <DIV id="out">
+                <p class="titles">Your Output:</p>
+                <p class="rwriting">user_output</p>
+            </DIV>
+            <p class="titles">Results:</p>
+            <p id="marks">You got $/~ = @%</p>
+            <form method="post" action="login">
+               <input type="submit" class="return" value="<RETURN TO HOME"/>
+            </form>
+        </DIV>
+
+    <script>
+    </script>
+</BODY>
+</html>
